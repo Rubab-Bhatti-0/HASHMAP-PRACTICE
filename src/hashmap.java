@@ -124,5 +124,9 @@ import java.util.*;
        public boolean isEmpty(){
             return n==0;
        }
+       public void print (){
+
+       }
+
     }
 
