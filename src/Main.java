@@ -16,7 +16,29 @@ public class Main {
 //        }
 //        return ll;
 //    }
+    public static String getstart(hashmap<String,String> tick){
+        hashmap<String,String> revmap=new hashmap<>();
+        for(String key:tick.keyset()){
+            revmap.put(tick.get(key),key);
+        }
+         for(String key:tick.keyset()){
+             if(revmap.containskey(key)==false){
+                 return key;
 
+             }
+         }
+         return null;
+    }
+   public static void iternary(hashmap<String,String> tick){
+      // hashmap<String,String> dest=tick;
+      String start=getstart(tick);
+      while(tick.containskey(start)){
+          System.out.print(start+"->");
+          start=tick.get(start);
+
+      }
+       System.out.println(start);
+   }
     public static int[] intersect_duplicates(int[] nums1, int[] nums2) {
         HashMap<Integer,Integer> map1=new HashMap<>();
         HashMap<Integer,Integer> map2=new HashMap<>();
@@ -212,5 +234,15 @@ public static List<Integer> majorityElement(int[] nums) {
             System.out.print(intesect[i]+" ");
         }
 
+        System.out.println("----------------------");
+        System.out.println();
+        hashmap<String,String> dest=new hashmap<>();
+        dest.put("chennai","Bangalure");
+        dest.put("mumbai","dehli");
+        dest.put("goa","chennai");
+        dest.put("dehli","goa");
+       // dest.put("chennai","Bangalure");
+        iternary(dest);
+        System.out.println();
     }
 }
